@@ -7,11 +7,11 @@ var express = require('express'),
 
 
 app.get('/', (req,res) => {
-  request('https://google.com/', (err, response, html) => {
+  request('http://www.3dsiso.com/cia-downloads/', (err, response, html) => {
     // let $ = cheerio.load(html);
     // console.log($);
-    console.log(html);
-    res.send('success');
+    // console.log(html);
+    res.send(html);
   })
 })
 

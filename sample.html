@@ -1,5 +1,4 @@
-var cheerio = require('cheerio');
-var html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" dir="ltr" lang="en" id="vbulletin_html">
     <head>
         <base href="http://www.3dsiso.com/" />
@@ -23,40 +22,40 @@ var html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http
         <meta property="og:title" content="CIA Downloads" />
         <script type="text/javascript">
             <!--
-  if (typeof YAHOO === 'undefined') // Load ALL YUI Local
-  {
-    document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=423"><\/script>');
-    document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=423"><\/script>');
-    var yuipath = 'clientscript/yui';
-    var yuicombopath = '';
-    var remoteyui = false;
-  }
-  else  // Load Rest of YUI remotely (where possible)
-  {
-    var yuipath = 'clientscript/yui';
-    var yuicombopath = '';
-    var remoteyui = true;
-    if (!yuicombopath)
+    if (typeof YAHOO === 'undefined') // Load ALL YUI Local
     {
-      document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=423"><\/script>');
+        document.write('<script type="text/javascript" src="clientscript/yui/yuiloader-dom-event/yuiloader-dom-event.js?v=423"><\/script>');
+        document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=423"><\/script>');
+        var yuipath = 'clientscript/yui';
+        var yuicombopath = '';
+        var remoteyui = false;
     }
-  }
-  var SESSIONURL = "s=b1372a653cf5892c033fb23921d82ccc&";
-  var SECURITYTOKEN = "guest";
-  var IMGDIR_MISC = "images/misc";
-  var IMGDIR_BUTTON = "images/buttons";
-  var vb_disable_ajax = parseInt("0", 10);
-  var SIMPLEVERSION = "423";
-  var BBURL = "http://www.3dsiso.com";
-  var LOGGEDIN = 0 > 0 ? true : false;
-  var THIS_SCRIPT = "forumdisplay";
-  var RELPATH = "forumdisplay.php?f=261";
-  var PATHS = {
-    forum : "",
-    cms   : "",
-    blog  : ""
-  };
-  var AJAXBASEURL = "http://www.3dsiso.com/";
+    else    // Load Rest of YUI remotely (where possible)
+    {
+        var yuipath = 'clientscript/yui';
+        var yuicombopath = '';
+        var remoteyui = true;
+        if (!yuicombopath)
+        {
+            document.write('<script type="text/javascript" src="clientscript/yui/connection/connection-min.js?v=423"><\/script>');
+        }
+    }
+    var SESSIONURL = "s=b1372a653cf5892c033fb23921d82ccc&";
+    var SECURITYTOKEN = "guest";
+    var IMGDIR_MISC = "images/misc";
+    var IMGDIR_BUTTON = "images/buttons";
+    var vb_disable_ajax = parseInt("0", 10);
+    var SIMPLEVERSION = "423";
+    var BBURL = "http://www.3dsiso.com";
+    var LOGGEDIN = 0 > 0 ? true : false;
+    var THIS_SCRIPT = "forumdisplay";
+    var RELPATH = "forumdisplay.php?f=261";
+    var PATHS = {
+        forum : "",
+        cms   : "",
+        blog  : ""
+    };
+    var AJAXBASEURL = "http://www.3dsiso.com/";
 // -->
 
         </script>
@@ -67,14 +66,14 @@ var html = `<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http
         <![endif]-->
         <script type="application/ld+json">
 {
-  "@context": "http://schema.org",
-  "@type": "WebSite",
-  "url": "http://www.3dsiso.com",
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": "http://www.3dsiso.com/search.php?do=process&query={search_term_string}",
-    "query-input": "required name=search_term_string"
-  }
+    "@context": "http://schema.org",
+    "@type": "WebSite",
+    "url": "http://www.3dsiso.com",
+    "potentialAction": {
+        "@type": "SearchAction",
+        "target": "http://www.3dsiso.com/search.php?do=process&query={search_term_string}",
+        "query-input": "required name=search_term_string"
+    }
 }
 </script>
         <script type="text/javascript">var _prx = [];_prx.push(["cfg.RequestUrl"," http://www.3dsiso.com/forumdisplay.php?f=261"]);</script>
@@ -136,63 +135,63 @@ margin-top:-5px;
                                 <input type="hidden" name="vb_login_md5password_utf" />
                             </form>
                             <script type="text/javascript">
-      YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
-      YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
-      vB_XHTML_Ready.subscribe(function()
-      {
-      //
-        YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
-        YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
-        YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
-        YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
-      });
-      
-      function navbar_username_focus(e)
-      {
-      //
-        var textbox = YAHOO.util.Event.getTarget(e);
-        if (textbox.value == 'User Name')
-        {
-        //
-          textbox.value='';
-          textbox.style.color='';
-        }
-      }
+            YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+            YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+            vB_XHTML_Ready.subscribe(function()
+            {
+            //
+                YAHOO.util.Event.on('navbar_username', "focus", navbar_username_focus);
+                YAHOO.util.Event.on('navbar_username', "blur", navbar_username_blur);
+                YAHOO.util.Event.on('navbar_password_hint', "focus", navbar_password_hint);
+                YAHOO.util.Event.on('navbar_password', "blur", navbar_password);
+            });
+            
+            function navbar_username_focus(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                if (textbox.value == 'User Name')
+                {
+                //
+                    textbox.value='';
+                    textbox.style.color='';
+                }
+            }
 
-      function navbar_username_blur(e)
-      {
-      //
-        var textbox = YAHOO.util.Event.getTarget(e);
-        if (textbox.value == '')
-        {
-        //
-          textbox.value='User Name';
-          textbox.style.color='';
-        }
-      }
-      
-      function navbar_password_hint(e)
-      {
-      //
-        var textbox = YAHOO.util.Event.getTarget(e);
-        
-        YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
-        YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
-        YAHOO.util.Dom.get('navbar_password').focus();
-      }
+            function navbar_username_blur(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                if (textbox.value == '')
+                {
+                //
+                    textbox.value='User Name';
+                    textbox.style.color='';
+                }
+            }
+            
+            function navbar_password_hint(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                
+                YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "none");
+                YAHOO.util.Dom.setStyle('navbar_password', "display", "inline");
+                YAHOO.util.Dom.get('navbar_password').focus();
+            }
 
-      function navbar_password(e)
-      {
-      //
-        var textbox = YAHOO.util.Event.getTarget(e);
-        
-        if (textbox.value == '')
-        {
-          YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
-          YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
-        }
-      }
-      </script>
+            function navbar_password(e)
+            {
+            //
+                var textbox = YAHOO.util.Event.getTarget(e);
+                
+                if (textbox.value == '')
+                {
+                    YAHOO.util.Dom.setStyle('navbar_password_hint', "display", "inline");
+                    YAHOO.util.Dom.setStyle('navbar_password', "display", "none");
+                }
+            }
+            </script>
                         </li>
                         <li id="hasan"></li>
                         <li id="fb_headerbox" class="hidden">
@@ -203,8 +202,8 @@ margin-top:-5px;
                     </ul>
                 </div>
                 <div class="ad_global_header">
-    
-  </div>
+        
+    </div>
                 <hr />
             </div>
             <div align="center" style="margin-top:20px;"></div>
@@ -320,9 +319,9 @@ margin-top:-5px;
             <!-- Facebook Start -->
             <style>
 .facebooklike{
-  height:45px;
-  width:auto;
-  background-color:#3B5998;
+    height:45px;
+    width:auto;
+    background-color:#3B5998;
         -moz-border-radius: 3px;
         -webkit-border-radius: 3px;
         -khtml-border-radius: 3px;
@@ -331,10 +330,10 @@ margin-top:-5px;
 
 }
 .fblike{
-  float:left;
-  width:auto;
-  height:44px;
-  padding:0px;  
+    float:left;
+    width:auto;
+    height:44px;
+    padding:0px;    
 }
 </style>
             <div class="facebooklike">
@@ -499,8 +498,8 @@ margin-top:-5px;
                             <ul class="popupbody popuphover">
                                 <li>
                                     <a href="http://www.3dsiso.com/forumdisplay.php?do=markread&amp;f=261&amp;markreadhash=guest&amp;s=b1372a653cf5892c033fb23921d82ccc" rel="nofollow" onclick="return mark_forum_and_threads_read(261);">
-                Mark This Forum Read
-              </a>
+                                Mark This Forum Read
+                            </a>
                                 </li>
                                 <li>
                                     <a href="http://www.3dsiso.com/nintendo-3ds-roms-homebrews-and-downloads/?s=b1372a653cf5892c033fb23921d82ccc" rel="nofollow">View Parent Forum</a>
@@ -572,11 +571,11 @@ margin-top:-5px;
                                 </div>
                                 <h4 class="nocss_label">Forum Actions:</h4>
                                 <ul class="forumactionlinks td">
-      
-        
-        
-      
-      </ul>
+            
+                
+                
+            
+            </ul>
                                 <h4 class="nocss_label">Forum Statistics:</h4>
                                 <ul class="forumstats_2 td">
                                     <li>Threads: 3,039</li>
@@ -593,8 +592,8 @@ margin-top:-5px;
                                             </a>
                                         </p>
                                         <div class="lastpostby">
-  
-    by 
+    
+        by 
                                             <div class="popupmenu memberaction">
                                                 <a class="username online popupctrl" href="http://www.3dsiso.com/members/346179.html?s=b1372a653cf5892c033fb23921d82ccc" title="AceTechHD is online now">
                                                     <strong>AceTechHD</strong>
@@ -602,18 +601,18 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/346179.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=346179&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=346179&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -646,11 +645,11 @@ margin-top:-5px;
                                 </div>
                                 <h4 class="nocss_label">Forum Actions:</h4>
                                 <ul class="forumactionlinks td">
-      
-        
-        
-      
-      </ul>
+            
+                
+                
+            
+            </ul>
                                 <h4 class="nocss_label">Forum Statistics:</h4>
                                 <ul class="forumstats_2 td">
                                     <li>Threads: 1,052</li>
@@ -667,8 +666,8 @@ margin-top:-5px;
                                             </a>
                                         </p>
                                         <div class="lastpostby">
-  
-    by 
+    
+        by 
                                             <div class="popupmenu memberaction">
                                                 <a class="username online popupctrl" href="http://www.3dsiso.com/members/33512.html?s=b1372a653cf5892c033fb23921d82ccc" title="microtouch is online now">
                                                     <strong>microtouch</strong>
@@ -676,18 +675,18 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/33512.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=33512&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=33512&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -734,8 +733,8 @@ margin-top:-5px;
                                                     </a>
                                                 </p>
                                                 <div class="lastpostby">
-  
-    by 
+    
+        by 
                                                     <div class="popupmenu memberaction">
                                                         <a class="username online popupctrl" href="http://www.3dsiso.com/members/33512.html?s=b1372a653cf5892c033fb23921d82ccc" title="microtouch is online now">
                                                             <strong>microtouch</strong>
@@ -743,18 +742,18 @@ margin-top:-5px;
                                                         <ul class="popupbody popuphover memberaction_body">
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/members/33512.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                             </li>
                                                             <li class="right">
                                                                 <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=33512&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                             </li>
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=33512&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -789,11 +788,11 @@ margin-top:-5px;
                                 </div>
                                 <h4 class="nocss_label">Forum Actions:</h4>
                                 <ul class="forumactionlinks td">
-      
-        
-        
-      
-      </ul>
+            
+                
+                
+            
+            </ul>
                                 <h4 class="nocss_label">Forum Statistics:</h4>
                                 <ul class="forumstats_2 td">
                                     <li>Threads: 145</li>
@@ -810,8 +809,8 @@ margin-top:-5px;
                                             </a>
                                         </p>
                                         <div class="lastpostby">
-  
-    by 
+    
+        by 
                                             <div class="popupmenu memberaction">
                                                 <a class="username offline popupctrl" href="http://www.3dsiso.com/members/359121.html?s=b1372a653cf5892c033fb23921d82ccc" title="Tutimane is offline">
                                                     <strong>Tutimane</strong>
@@ -819,18 +818,18 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/359121.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=359121&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=359121&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -877,8 +876,8 @@ margin-top:-5px;
                                                     </a>
                                                 </p>
                                                 <div class="lastpostby">
-  
-    by 
+    
+        by 
                                                     <div class="popupmenu memberaction">
                                                         <a class="username offline popupctrl" href="http://www.3dsiso.com/members/179683.html?s=b1372a653cf5892c033fb23921d82ccc" title="Francesco Cordella is offline">
                                                             <strong>Francesco Cordella</strong>
@@ -886,18 +885,18 @@ margin-top:-5px;
                                                         <ul class="popupbody popuphover memberaction_body">
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/members/179683.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                             </li>
                                                             <li class="right">
                                                                 <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=179683&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                             </li>
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=179683&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -932,11 +931,11 @@ margin-top:-5px;
                                 </div>
                                 <h4 class="nocss_label">Forum Actions:</h4>
                                 <ul class="forumactionlinks td">
-      
-        
-        
-      
-      </ul>
+            
+                
+                
+            
+            </ul>
                                 <h4 class="nocss_label">Forum Statistics:</h4>
                                 <ul class="forumstats_2 td">
                                     <li>Threads: 849</li>
@@ -953,8 +952,8 @@ margin-top:-5px;
                                             </a>
                                         </p>
                                         <div class="lastpostby">
-  
-    by 
+    
+        by 
                                             <div class="popupmenu memberaction">
                                                 <a class="username offline popupctrl" href="http://www.3dsiso.com/members/345393.html?s=b1372a653cf5892c033fb23921d82ccc" title="MitoKi is offline">
                                                     <strong>MitoKi</strong>
@@ -962,18 +961,18 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/345393.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=345393&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=345393&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1020,8 +1019,8 @@ margin-top:-5px;
                                                     </a>
                                                 </p>
                                                 <div class="lastpostby">
-  
-    by 
+    
+        by 
                                                     <div class="popupmenu memberaction">
                                                         <a class="username offline popupctrl" href="http://www.3dsiso.com/members/153852.html?s=b1372a653cf5892c033fb23921d82ccc" title="Venomux is offline">
                                                             <strong>Venomux</strong>
@@ -1029,18 +1028,18 @@ margin-top:-5px;
                                                         <ul class="popupbody popuphover memberaction_body">
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/members/153852.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                             </li>
                                                             <li class="right">
                                                                 <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=153852&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                             </li>
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=153852&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -1083,8 +1082,8 @@ margin-top:-5px;
                                                     </a>
                                                 </p>
                                                 <div class="lastpostby">
-  
-    by 
+    
+        by 
                                                     <div class="popupmenu memberaction">
                                                         <a class="username offline popupctrl" href="http://www.3dsiso.com/members/358529.html?s=b1372a653cf5892c033fb23921d82ccc" title="CourtneySNK is offline">
                                                             <strong>CourtneySNK</strong>
@@ -1092,18 +1091,18 @@ margin-top:-5px;
                                                         <ul class="popupbody popuphover memberaction_body">
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/members/358529.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                             </li>
                                                             <li class="right">
                                                                 <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=358529&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                             </li>
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=358529&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -1136,11 +1135,11 @@ margin-top:-5px;
                                 </div>
                                 <h4 class="nocss_label">Forum Actions:</h4>
                                 <ul class="forumactionlinks td">
-      
-        
-        
-      
-      </ul>
+            
+                
+                
+            
+            </ul>
                                 <h4 class="nocss_label">Forum Statistics:</h4>
                                 <ul class="forumstats_2 td">
                                     <li>Threads: 143</li>
@@ -1157,8 +1156,8 @@ margin-top:-5px;
                                             </a>
                                         </p>
                                         <div class="lastpostby">
-  
-    by 
+    
+        by 
                                             <div class="popupmenu memberaction">
                                                 <a class="username offline popupctrl" href="http://www.3dsiso.com/members/351949.html?s=b1372a653cf5892c033fb23921d82ccc" title="funnyandoriginalusername is offline">
                                                     <strong>funnyandoriginalusername</strong>
@@ -1166,18 +1165,18 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/351949.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=351949&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=351949&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1222,8 +1221,8 @@ margin-top:-5px;
                                                     </a>
                                                 </p>
                                                 <div class="lastpostby">
-  
-    by 
+    
+        by 
                                                     <div class="popupmenu memberaction">
                                                         <a class="username offline popupctrl" href="http://www.3dsiso.com/members/102812.html?s=b1372a653cf5892c033fb23921d82ccc" title="Shadow322 is offline">
                                                             <strong>Shadow322</strong>
@@ -1231,18 +1230,18 @@ margin-top:-5px;
                                                         <ul class="popupbody popuphover memberaction_body">
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/members/102812.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                             </li>
                                                             <li class="right">
                                                                 <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=102812&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                             </li>
                                                             <li class="left">
                                                                 <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=102812&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                             </li>
                                                         </ul>
                                                     </div>
@@ -1273,11 +1272,11 @@ margin-top:-5px;
                                 </div>
                                 <h4 class="nocss_label">Forum Actions:</h4>
                                 <ul class="forumactionlinks td">
-      
-        
-        
-      
-      </ul>
+            
+                
+                
+            
+            </ul>
                                 <h4 class="nocss_label">Forum Statistics:</h4>
                                 <ul class="forumstats_2 td">
                                     <li>Threads: 66</li>
@@ -1294,8 +1293,8 @@ margin-top:-5px;
                                             </a>
                                         </p>
                                         <div class="lastpostby">
-  
-    by 
+    
+        by 
                                             <div class="popupmenu memberaction">
                                                 <a class="username offline popupctrl" href="http://www.3dsiso.com/members/122382.html?s=b1372a653cf5892c033fb23921d82ccc" title="NikolaMiljevic is offline">
                                                     <strong>NikolaMiljevic</strong>
@@ -1303,18 +1302,18 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/122382.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=122382&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=122382&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -1362,11 +1361,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon6.png" alt="Cool" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_271417" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/271417-gdrive-faster-billy-cia-eshop-undub-dragon-quest-8-a.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_271417">[GDRIVE][FASTER] Billy CIA, ESHOP &amp; UNDUB | DRAGON QUEST 8</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1410,10 +1409,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            1,826
-          
-        </li>
+                    
+                        1,826
+                    
+                </li>
                                         <li>Views: 769,016</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -1428,24 +1427,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/285739.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=285739&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=285739&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>2 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/271417-gdrive-faster-billy-cia-eshop-undub-dragon-quest-8-a-post467768.html?s=b1372a653cf5892c033fb23921d82ccc#post467768" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -1464,11 +1463,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon1.png" alt="" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_265742" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/265742-mega-thread-jasons-cia-collection-delays-ads-passwords-downloads.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_265742">[MEGA THREAD] Jason's CIA Collection *NO DELAYS NO ADS NO PASSWORDS JUST DOWNLOADS*</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1511,10 +1510,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            702
-          
-        </li>
+                    
+                        702
+                    
+                </li>
                                         <li>Views: 281,660</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -1529,24 +1528,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/242167.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=242167&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=242167&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Day Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/265742-mega-thread-jasons-cia-collection-delays-ads-passwords-downloads-post467393.html?s=b1372a653cf5892c033fb23921d82ccc#post467393" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -1565,11 +1564,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon1.png" alt="" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_279841" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/279841-megathread-nintendo-3ds-eshop-roms-converted-cia-format-1fichier.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_279841">MegaThread Nintendo 3DS &amp; eShop Roms converted to CIA Format [1Fichier]</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1590,10 +1589,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            1
-          
-        </li>
+                    
+                        1
+                    
+                </li>
                                         <li>Views: 1,084</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -1608,24 +1607,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/359164.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=359164&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=359164&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>2 Days Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279841-megathread-nintendo-3ds-eshop-roms-converted-cia-format-1fichier-post467250.html?s=b1372a653cf5892c033fb23921d82ccc#post467250" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -1644,11 +1643,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon1.png" alt="" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_278558" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/278558-legit-signed-3ds-game-tickets-11-0-11-1-11-2-fasthax-fbi-cfw.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_278558">Legit/Signed 3DS game tickets (for 11.0+11.1+11.2 with FastHax+FBI or CFW)</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1692,10 +1691,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            109
-          
-        </li>
+                    
+                        109
+                    
+                </li>
                                         <li>Views: 27,577</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -1710,24 +1709,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/301895.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=301895&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=301895&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>4 Days Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/278558-legit-signed-3ds-game-tickets-11-0-11-1-11-2-fasthax-fbi-cfw-post466971.html?s=b1372a653cf5892c033fb23921d82ccc#post466971" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -1746,11 +1745,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon4.png" alt="Exclamation" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_263074" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/263074-read-warning-precautions-cia-files.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_263074">Read-Me!!! WARNING! PRECAUTIONS about CIA files!</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1791,10 +1790,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            108
-          
-        </li>
+                    
+                        108
+                    
+                </li>
                                         <li>Views: 86,347</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -1809,24 +1808,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/125676.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=125676&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=125676&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>01-01-2017
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/263074-read-warning-precautions-cia-files-post457669.html?s=b1372a653cf5892c033fb23921d82ccc#post457669" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -1845,11 +1844,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon1.png" alt="" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_278671" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/278671-allowing-uploading-pokemon-sun-moon-threads.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_278671">We are allowing uploading\making Pokemon sun/moon threads again!!!</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1870,10 +1869,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            0
-          
-        </li>
+                    
+                        0
+                    
+                </li>
                                         <li>Views: 4,554</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -1888,24 +1887,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/102812.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=102812&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=102812&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>12-20-2016
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/278671-allowing-uploading-pokemon-sun-moon-threads-post455109.html?s=b1372a653cf5892c033fb23921d82ccc#post455109" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -1924,11 +1923,11 @@ margin-top:-5px;
                                                 <img src="http://www.3dsiso.com/images/icons/icon4.png" alt="Exclamation" border="0" />
                                                 <img src="http://www.3dsiso.com/images/misc/sticky.gif" alt="Sticky Thread" />
                                                 <span id="thread_prefix_263387" class="prefix understate">
-              
-              Sticky: 
-              
-              
-            </span>
+                            
+                            Sticky: 
+                            
+                            
+                        </span>
                                                 <a class="title" href="http://www.3dsiso.com/cia-downloads/263387-please-post-requests.html?s=b1372a653cf5892c033fb23921d82ccc" id="thread_title_263387">Please do not post requests here</a>
                                             </h3>
                                             <div class="threadmeta">
@@ -1939,13 +1938,13 @@ margin-top:-5px;
                                                     <!-- iconinfo -->
                                                     <div class="threaddetails td">
                                                         <div class="threaddetailicons">
-                
-                
-                
-                
-                
-                
-              </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -1954,10 +1953,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            0
-          
-        </li>
+                    
+                        0
+                    
+                </li>
                                         <li>Views: 3,046</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -1972,24 +1971,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/57647.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=57647&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=57647&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>12-11-2014
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/263387-please-post-requests-post321084.html?s=b1372a653cf5892c033fb23921d82ccc#post321084" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2051,10 +2050,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            617
-          
-        </li>
+                    
+                        617
+                    
+                </li>
                                         <li>Views: 196,490</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -2069,24 +2068,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/237444.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=237444&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=237444&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>18 Minutes Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/274624-mega-cia-collection-retail-eshop-undub-dlc-update-2-4-poochy-yoshis-ww-post467783.html?s=b1372a653cf5892c033fb23921d82ccc#post467783" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2145,10 +2144,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            239
-          
-        </li>
+                    
+                        239
+                    
+                </li>
                                         <li>Views: 100,888</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -2163,24 +2162,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/73709.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=73709&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=73709&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>24 Minutes Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/267804-mega-pokemon-3ds-hacks-collection-cia-region-free-updated-01-08-16-a-post467782.html?s=b1372a653cf5892c033fb23921d82ccc#post467782" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2237,10 +2236,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            60
-          
-        </li>
+                    
+                        60
+                    
+                </li>
                                         <li>Views: 2,895</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -2255,24 +2254,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/345393.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=345393&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=345393&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Hour Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279983-monster-hunter-double-cross-sp-demo-mhxx-post467773.html?s=b1372a653cf5892c033fb23921d82ccc#post467773" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2329,10 +2328,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            82
-          
-        </li>
+                    
+                        82
+                    
+                </li>
                                         <li>Views: 10,006</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -2347,24 +2346,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/152465.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=152465&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=152465&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Hour Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279446-mega-dragon-ball-fusions-uncensored-uncensored-2-2-0-update-usa-region-free-post467770.html?s=b1372a653cf5892c033fb23921d82ccc#post467770" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2401,10 +2400,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            2
-          
-        </li>
+                    
+                        2
+                    
+                </li>
                                         <li>Views: 254</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -2419,24 +2418,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/243488.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=243488&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=243488&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>2 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279992-monster-hunter-double-cross-sp-demo-mhxx-jpn-tik-post467762.html?s=b1372a653cf5892c033fb23921d82ccc#post467762" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2493,10 +2492,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            48
-          
-        </li>
+                    
+                        48
+                    
+                </li>
                                         <li>Views: 4,583</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -2511,24 +2510,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/61246.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=61246&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=61246&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>3 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279698-gdrive-dragon-quest-8-3ed-orchestrated-uncensored-undubbed-eur-usa-post467757.html?s=b1372a653cf5892c033fb23921d82ccc#post467757" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2575,13 +2574,13 @@ margin-top:-5px;
                                                     <!-- iconinfo -->
                                                     <div class="threaddetails td">
                                                         <div class="threaddetailicons">
-                
-                
-                
-                
-                
-                
-              </div>
+                                
+                                
+                                
+                                
+                                
+                                
+                            </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -2590,10 +2589,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            191
-          
-        </li>
+                    
+                        191
+                    
+                </li>
                                         <li>Views: 33,160</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -2608,24 +2607,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/128614.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=128614&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=128614&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>4 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/269604-3ds-hans-gba-gbc-vc-rom-hacks-rare-rom-injects-alex-cia-format-post467744.html?s=b1372a653cf5892c033fb23921d82ccc#post467744" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2675,10 +2674,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            11
-          
-        </li>
+                    
+                        11
+                    
+                </li>
                                         <li>Views: 1,147</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -2693,24 +2692,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/361239.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=361239&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=361239&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>4 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/278261-mega-persona-shadow-labyrinth-kor-post467740.html?s=b1372a653cf5892c033fb23921d82ccc#post467740" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2763,10 +2762,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            16
-          
-        </li>
+                    
+                        16
+                    
+                </li>
                                         <li>Views: 1,105</li>
                                         <li class="hidden">Rating3 / 5</li>
                                     </ul>
@@ -2781,24 +2780,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/361151.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=361151&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=361151&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>9 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279593-mega-project-zone-2-kor-2-a-post467718.html?s=b1372a653cf5892c033fb23921d82ccc#post467718" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2855,10 +2854,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            106
-          
-        </li>
+                    
+                        106
+                    
+                </li>
                                         <li>Views: 59,006</li>
                                         <li class="hidden">Rating4 / 5</li>
                                     </ul>
@@ -2873,24 +2872,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/229655.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=229655&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=229655&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>11 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/274138-cia-collection-mega-post467690.html?s=b1372a653cf5892c033fb23921d82ccc#post467690" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -2947,10 +2946,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            71
-          
-        </li>
+                    
+                        71
+                    
+                </li>
                                         <li>Views: 11,894</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -2965,24 +2964,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/360270.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=360270&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=360270&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>17 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/278482-mega-fire-emblem-special-edition-english-translation-v4-0-dlc-links-post467607.html?s=b1372a653cf5892c033fb23921d82ccc#post467607" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3042,10 +3041,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            518
-          
-        </li>
+                    
+                        518
+                    
+                </li>
                                         <li>Views: 49,600</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -3060,24 +3059,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/329294.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=329294&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=329294&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>18 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279363-gdrive-dragon-quest-viii-usa-eur-retail-orchestra-uncensored-v4-cia-3ds-post467606.html?s=b1372a653cf5892c033fb23921d82ccc#post467606" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3134,10 +3133,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            44
-          
-        </li>
+                    
+                        44
+                    
+                </li>
                                         <li>Views: 8,542</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -3152,24 +3151,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/242167.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=242167&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=242167&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>19 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279450-mega-fire-emblem-special-edition-english-v4-0-team-post467579.html?s=b1372a653cf5892c033fb23921d82ccc#post467579" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3209,10 +3208,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            2
-          
-        </li>
+                    
+                        2
+                    
+                </li>
                                         <li>Views: 477</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -3227,24 +3226,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/169231.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=169231&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=169231&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>22 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279867-mega-jpn-gundam-3d-battle-3ds-cia-post467555.html?s=b1372a653cf5892c033fb23921d82ccc#post467555" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3294,10 +3293,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            16
-          
-        </li>
+                    
+                        16
+                    
+                </li>
                                         <li>Views: 795</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -3312,24 +3311,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/51665.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=51665&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=51665&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>23 Hours Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279447-mega-persona-undub-1-1-usa-region-free-post467551.html?s=b1372a653cf5892c033fb23921d82ccc#post467551" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3386,10 +3385,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            64
-          
-        </li>
+                    
+                        64
+                    
+                </li>
                                         <li>Views: 5,986</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -3404,24 +3403,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/57520.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=57520&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=57520&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Day Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279700-gdrive-mega-poochy-yoshis-woolly-world-usa-eur-clean-gw-cfw-cia-3ds-post467538.html?s=b1372a653cf5892c033fb23921d82ccc#post467538" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3471,10 +3470,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            16
-          
-        </li>
+                    
+                        16
+                    
+                </li>
                                         <li>Views: 4,754</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -3489,24 +3488,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/213824.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=213824&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=213824&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Day Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/271631-mega-hatsune-miku-project-mirai-dx-usa-fixed-post467483.html?s=b1372a653cf5892c033fb23921d82ccc#post467483" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3562,10 +3561,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            24
-          
-        </li>
+                    
+                        24
+                    
+                </li>
                                         <li>Views: 2,727</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -3580,24 +3579,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/213824.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=213824&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=213824&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Day Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/274918-mega-bannerfixed-taiko-tatsujin-don-katsu-jikuu-daibouken-post467480.html?s=b1372a653cf5892c033fb23921d82ccc#post467480" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3634,10 +3633,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            3
-          
-        </li>
+                    
+                        3
+                    
+                </li>
                                         <li>Views: 291</li>
                                         <li class="hidden">Rating0 / 5</li>
                                     </ul>
@@ -3652,24 +3651,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/61685.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=61685&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=61685&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Day Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/279929-multiup-org-cia-usa-mario-kart-7-ctgp-7-v0-12-1-a-post467475.html?s=b1372a653cf5892c033fb23921d82ccc#post467475" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3729,10 +3728,10 @@ margin-top:-5px;
                                     <!-- threadstats -->
                                     <ul class="threadstats td alt" title="">
                                         <li>Replies:
-          
-            199
-          
-        </li>
+                    
+                        199
+                    
+                </li>
                                         <li>Views: 19,320</li>
                                         <li class="hidden">Rating5 / 5</li>
                                     </ul>
@@ -3747,24 +3746,24 @@ margin-top:-5px;
                                                 <ul class="popupbody popuphover memberaction_body">
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/members/3688.html?s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_profile">
-        View Profile
-      </a>
+                View Profile
+            </a>
                                                     </li>
                                                     <li class="right">
                                                         <a href="http://www.3dsiso.com/search.php?do=finduser&amp;userid=3688&amp;contenttype=vBForum_Post&amp;showposts=1&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_forum" rel="nofollow">
-        View Forum Posts
-      </a>
+                View Forum Posts
+            </a>
                                                     </li>
                                                     <li class="left">
                                                         <a href="http://www.3dsiso.com/private.php?do=newpm&amp;u=3688&amp;s=b1372a653cf5892c033fb23921d82ccc" class="siteicon_message" rel="nofollow">
-        Private Message
-      </a>
+                Private Message
+            </a>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </dd>
                                         <dd>1 Day Ago
-      
+            
                                             <a href="http://www.3dsiso.com/cia-downloads/276956-gd-mega-yo-kai-watch-2-bony-spirits-fleshy-souls-undub-3dsiso-exclusive-post467452.html?s=b1372a653cf5892c033fb23921d82ccc#post467452" class="lastpostdate understate" title="Go to last post">
                                                 <img src="http://www.3dsiso.com/images/buttons/lastpost-right.png" alt="Go to last post" />
                                             </a>
@@ -3776,8 +3775,8 @@ margin-top:-5px;
                     </div>
                     <hr />
                     <div class="noinlinemod forumfoot">
-    
-    </div>
+        
+        </div>
                     <input type="hidden" name="url" value="" />
                     <input type="hidden" name="s" value="b1372a653cf5892c033fb23921d82ccc" />
                     <input type="hidden" name="securitytoken" value="guest" />
@@ -4466,10 +4465,10 @@ init_forum_readmarker_system();
                 </ul>
                 <script type="text/javascript">
                     <!--
-    // Main vBulletin Javascript Initialization
-    vBulletin_init();
-  //-->
-  
+        // Main vBulletin Javascript Initialization
+        vBulletin_init();
+    //-->
+    
                 </script>
             </div>
         </div>
@@ -4485,17 +4484,17 @@ Please contact us for your DMCA OR Abuse Requests via
             </div>
             <div id="footer_copyright" class="shade footer_copyright">
                 <!-- Do not remove this copyright notice -->
-  Powered by 
+    Powered by 
                 <a rel="nofollow" href="https://www.vbulletin.com" id="vbulletinlink">vBulletin&reg;</a> Version 4.2.3
                 <br />Copyright &copy; 2017 vBulletin Solutions, Inc. All rights reserved.
-                <!-- Do not remove this copyright notice -->  
+                <!-- Do not remove this copyright notice -->    
 
             </div>
             <div id="footer_morecopyright" class="shade footer_morecopyright">
                 <!-- Do not remove cronimage or your scheduled tasks will cease to function -->
                 <!-- Do not remove cronimage or your scheduled tasks will cease to function -->
-  Search Engine Optimisation provided by 
-      
+    Search Engine Optimisation provided by 
+            
                 <a rel="nofollow" href="http://www.dragonbyte-tech.com/vbecommerce.php?productid=303&do=product&utm_source=3dsiso.com&utm_campaign=product&utm_medium=DragonByte%2BSEO&utm_content=Lite" target="_blank">DragonByte SEO v2.0.20 (Lite)</a> -
                 <a rel="nofollow" href="http://www.dragonbyte-tech.com/?utm_source=3dsiso.com&utm_campaign=site&utm_medium=DragonByte%2BSEO&utm_content=Lite" target="_blank">vBulletin Mods &amp; Addons</a> Copyright &copy; 2017 DragonByte Technologies Ltd.
                 <br />All the content on 3DSISO.com is user generated and linked to 3rd party websites. 3DSISO.com do not host any files at it's servers, it basically provides and indexing service. 3DSISO.com; It's owners and it's staff can not be held responsible for any type of content. To remove a link please contact webmaster via Contactus.
@@ -4506,22 +4505,22 @@ Please contact us for your DMCA OR Abuse Requests via
             <script type="text/javascript" src="http://www.3dsiso.com/clientscript/vbulletin_facebook.js?v=423"></script>
             <script type="text/javascript">
                 <!--
-  loadFacebookAPI('en_US');
-  function fbAsyncInit()
-  {
-    vBfb = new vB_Facebook({
-      appid : "1377720232451715",
-      connected : 0,
-      active : 0,
-      autoreg : 1,
-      feed_newthread : 1,
-      feed_postreply : 1,
-      feed_blogentry : 1,
-      feed_blogcomment : 1,
-      feed_newarticle : 1,
-      feed_articlecomment : 1
-    });
-  }
+    loadFacebookAPI('en_US');
+    function fbAsyncInit()
+    {
+        vBfb = new vB_Facebook({
+            appid : "1377720232451715",
+            connected : 0,
+            active : 0,
+            autoreg : 1,
+            feed_newthread : 1,
+            feed_postreply : 1,
+            feed_blogentry : 1,
+            feed_blogcomment : 1,
+            feed_newarticle : 1,
+            feed_articlecomment : 1
+        });
+    }
 // -->
 
             </script>
@@ -4574,30 +4573,4 @@ src="http://e0.extreme-dm.com/s9.g?login=3dsisos&amp;j=n&amp;jv=n" />
         </div>
         <script type="text/javascript" src="//s.ntv.io/serve/load.js" async></script>
     </body>
-</html>`
-
-var $ = cheerio.load(html);
-$('script').remove();
-$('style').remove();
-
-
-
-
-var every = $('*');
-for (var i=0; i<every.length; i++) {
-  var remove = item => {
-    $(item).remove();
-    every = $('*');
-    i=0;
-  }
-
-  var href = every[i].attribs.href
-  every[i].attribs = {};
-  if (href) every[i].attribs['href'] = href;
-  if (every[i].children.length === 0) { remove(every[i]); continue; }
-}
-
-
-
-// console.log($('div')[0]);
-console.log($.html());
+</html>
