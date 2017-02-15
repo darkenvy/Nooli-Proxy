@@ -1,6 +1,7 @@
 var http = require('http'),
-    httpProxy = require('http-proxy');
-
+    https = require('https'),
+    httpProxy = require('http-proxy'),
+    fs = require('fs');
 //
 // Create a proxy server with custom application logic
 //
@@ -14,32 +15,65 @@ var proxy = httpProxy.createProxyServer({});
 // you need to modify the proxy request before the proxy connection
 // is made to the target.
 //
-proxy.on('proxyReq', function(proxyReq, req, res, options) {
-  proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
-});
+// proxy.on('proxyReq', function(proxyReq, req, res, options) {
+//   proxyReq.setHeader('X-Special-Proxy-Header', 'foobar');
+// });
 
 // proxy.on('error', function(e) {
 //   console.log('ERROR ', e);
 // });
 
-var server = http.createServer(function(req, res) {
+// var optionsHttps = {
+//   ssl: {
+//     key: fs.readFileSync('server.key', 'utf8'),
+//     cert: fs.readFileSync('server.csr', 'utf8')
+//   },
+//   changeOrigin: true,
+//   // target: 'https://localhost:9010',
+//   secure: true // Depends on your needs, could be false.
+// }
 
-  console.log(req.headers.host);
+// var server = http.createServer(function(req, res) {
+//   console.log(req.headers.host);
+//   // var ext = req.url.split('.');
+//   // if (ext && ext[ext.length-1] === 'png') {
+//   //   res.write(''); res.end();
+//   // } 
+//   // else {
+//     res.write('success');
+//     res.end();
+//   // proxy.web(req, res, {target: req.headers}, function(e) {
+//   //   if (e) {res.write(''); res.end()};
+//   // });
+//   // }
+// });
+
+// console.log("listening on port 5050")
+// server.listen(5050);
+
+var options = {
+  key: fs.readFileSync('./ssl/server.key'),
+  cert: fs.readFileSync('./ssl/server.crt'),
+  ca: fs.readFileSync('./ssl/ca.crt'),
+  requestCert: true,
+  rejectUnauthorized: false
+};
 
 
-  var ext = req.url.split('.');
-  if (ext && ext[ext.length-1] === 'png') {
-    res.write(''); res.end();
-  } 
-  else {
-    proxy.web(req, res, {target: req.headers}, function(e) {
-      if (e) {res.write(''); res.end()};
-    });
-  }
+var httpss = https.createServer(options, function(req, res) {
+  console.log('Proxying https request at %s', new Date());
+  res.write('https success');
+  res.end();
+})
+
+console.log('listening on port 443');
+httpss.listen(443, function(err) {
+  if (err)
+    console.log('Error serving https proxy request: %s', req);
+    // console.log('Created https proxy. Forwarding requests from %s to %s:%s', '443', proxy.target.host, proxy.target.port);
 });
 
-console.log("listening on port 5050")
-server.listen(5050);
+
 
 // http://hllanguage.com/
 // http://hllanguage.com/css/owl.carousel.css
