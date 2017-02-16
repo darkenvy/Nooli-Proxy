@@ -1,8 +1,23 @@
-var express   = require('express'),
-    cheerio   = require('cheerio'),
+let express   = require('express'),
     request   = require('request'),
+    minify    = require('html-minifier').minify,
     conformer = require('./conformer'),
     app       = express();
+
+let minifyOpt = {
+  removeAttributeQuotes: true,
+  collapseWhitespace: true,
+  collapseInlineTagWhitespace: true,
+  decodeEntities: true,
+  minifyCSS: true,
+  minifyJS: true,
+  removeEmptyAttributes: true,
+  removeEmptyElements: true,
+  removeRedundantAttributes: true,
+  removeScriptTypeAttributes: true,
+  removeStyleLinkTypeAttributes: true,
+  useShortDoctype: true
+};
 
 
 
@@ -19,8 +34,10 @@ app.get(/.*/, (req, res) => {
   request(url, (err, response, html) => {
     if (err) { res.send(err) }
     else {
-      let clean = conformer.urls(html, response.socket._host);
-      res.send(clean)
+      // let cleanHMTL = conformer.urls(html, response.socket._host);
+      // cleanHTML = minify(cleanHMTL, minifyOpt)
+      // res.send(cleanHTML);
+      res.send(minify(html, minifyOpt));
     }
   })
 })

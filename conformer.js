@@ -19,9 +19,19 @@ module.exports = {
         else if (linkTest(links[i].attribs.href)) {
           links[i].attribs.href = 'http://localhost:3000/' + links[i].attribs.href;
         } 
-        
       }
     }
     return $.html();
+  },
+  classes: function(html) {
+    let $ = cheerio.load(html);
+    let classList = []
+    let every = $('*');
+    for (var i=0; i<every.length; i++) {
+      if (every[i].attribs.class) {
+        classList.push(every[i].attribs.class)
+      }
+    }
+    return classList
   }
 }
